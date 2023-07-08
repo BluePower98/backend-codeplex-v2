@@ -32,6 +32,20 @@ use App\Repositories\PlanDetail\PlanDetailRepository;
 use App\Repositories\PlanDetail\PlanDetailRepositoryInterface;
 use App\Repositories\Product\ProductRepository;
 use App\Repositories\Product\ProductRepositoryInterface;
+use App\Repositories\Proveedores\ProveedoresRepository;
+use App\Repositories\Proveedores\ProveedoresRepositoryInterface;
+use App\Repositories\Cursos\Alumnos\AlumnosRepository;
+use App\Repositories\Cursos\Alumnos\AlumnosRepositoryInterface;
+use App\Repositories\Cursos\Cursos\CursosRepository;
+use App\Repositories\Cursos\Cursos\CursosRepositoryInterface;
+use App\Repositories\Cursos\Especialidades\EspecialidadesRepository;
+use App\Repositories\Cursos\Especialidades\EspecialidadesRepositoryInterface;
+use App\Repositories\Cursos\Grupos\GruposRepository;
+use App\Repositories\Cursos\Grupos\GruposRepositoryInterface;
+use App\Repositories\Cursos\Comentarios\ComentariosRepository;
+use App\Repositories\Cursos\Comentarios\ComentariosRepositoryInterface;
+use App\Repositories\Cursos\Instructores\InstructoresRepository;
+use App\Repositories\Cursos\Instructores\InstructoresRepositoryInterface;
 use App\Repositories\ProductImage\ProductImageRepository;
 use App\Repositories\ProductImage\ProductImageRepositoryInterface;
 use App\Repositories\SubLine\SubLineRepository;
@@ -172,6 +186,36 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             ProductImageRepositoryInterface::class,
             ProductImageRepository::class
+        );
+
+        $this->app->bind(
+            ProveedoresRepositoryInterface::class,
+            ProveedoresRepository::class
+        );
+
+        $this->app->bind(
+            AlumnosRepositoryInterface::class,
+            AlumnosRepository::class
+        );
+        $this->app->bind(
+            CursosRepositoryInterface::class,
+            CursosRepository::class
+        );
+        $this->app->bind(
+            EspecialidadesRepositoryInterface::class,
+            EspecialidadesRepository::class
+        );
+        $this->app->bind(
+            GruposRepositoryInterface::class,
+            GruposRepository::class
+        );
+        $this->app->bind(
+            ComentariosRepositoryInterface::class,
+            ComentariosRepository::class
+        );
+        $this->app->bind(
+            InstructoresRepositoryInterface::class,
+            InstructoresRepository::class
         );
     }
 }
